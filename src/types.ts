@@ -6,7 +6,12 @@ export type Block =
 export type ScoreData = {
   timeSignature: string
   keySignature:  string
-  measures:      Measure[]
+  staves:        Staff[]
+}
+
+export type Staff = {
+  clef:     'treble' | 'bass' | 'alto'
+  measures: Measure[]
 }
 
 export type Measure = {

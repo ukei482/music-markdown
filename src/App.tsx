@@ -10,11 +10,31 @@ const initialBlocks: Block[] = [
     id: '3', type: 'score', data: {
       timeSignature: '4/4',
       keySignature: 'C',
-      measures: [
-        { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'A4', duration: 4 }] },
-        { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'C5', duration: 4 }] },
-        { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }] },
-        { chord: 'G',  degree: 'Ⅴ',  notes: [{ pitch: 'G3', duration: 4 }, { pitch: 'B3', duration: 4 }, { pitch: 'D4', duration: 4 }] },
+      staves: [
+        {
+          clef: 'treble',
+          measures: [
+            { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
+            { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'C5', duration: 4 }, { pitch: 'A4', duration: 4 }] },
+            { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
+            { chord: 'G',  degree: 'Ⅴ',  notes: [{ pitch: 'G3', duration: 4 }, { pitch: 'B3', duration: 4 }, { pitch: 'D4', duration: 4 }, { pitch: 'B3', duration: 4 }] },
+            { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'A3', duration: 2 }, { pitch: 'C4', duration: 2 }] },
+            { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F3', duration: 2 }, { pitch: 'A3', duration: 2 }] },
+            { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C4', duration: 1 }] },
+          ],
+        },
+        {
+          clef: 'bass',
+          measures: [
+            { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'A3', duration: 2 }, { pitch: 'E3', duration: 2 }] },
+            { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F3', duration: 2 }, { pitch: 'C3', duration: 2 }] },
+            { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C3', duration: 2 }, { pitch: 'G3', duration: 2 }] },
+            { chord: 'G',  degree: 'Ⅴ',  notes: [{ pitch: 'G3', duration: 2 }, { pitch: 'D3', duration: 2 }] },
+            { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'A3', duration: 1 }] },
+            { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F3', duration: 1 }] },
+            { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C3', duration: 1 }] },
+          ],
+        },
       ],
     },
   },
@@ -29,7 +49,6 @@ export default function App() {
 
   return (
     <div className="max-w-2xl mx-auto px-8 py-10">
-      {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <span className="text-lg font-semibold text-gray-800">music-markdown</span>
         <div className="flex rounded-lg border border-gray-200 overflow-hidden text-sm">
