@@ -8,13 +8,11 @@ const initialBlocks: Block[] = [
   { id: '2', type: 'text', content: '今日は晴れていた。' },
   {
     id: '3', type: 'score', data: {
-      timeSignature: '4/4',
-      keySignature: 'C',
       staves: [
         {
           clef: 'treble',
           measures: [
-            { chord: 'Am', degree: 'Ⅵm', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
+            { chord: 'Am', degree: 'Ⅵm', timeSignature: '4/4', keySignature: 'C', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
             { chord: 'F',  degree: 'Ⅳ',  notes: [{ pitch: 'F4', duration: 4 }, { pitch: 'A4', duration: 4 }, { pitch: 'C5', duration: 4 }, { pitch: 'A4', duration: 4 }] },
             { chord: 'C',  degree: 'Ⅰ',  notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
             { chord: 'G',  degree: 'Ⅴ',  notes: [{ pitch: 'G3', duration: 4 }, { pitch: 'B3', duration: 4 }, { pitch: 'D4', duration: 4 }, { pitch: 'B3', duration: 4 }] },

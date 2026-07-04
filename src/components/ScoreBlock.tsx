@@ -33,7 +33,7 @@ export default function ScoreBlock({ data, onEdit }: Props) {
           <GearIcon />
         </button>
         <span className="ml-auto text-xs text-gray-400 pr-1">
-          {data.keySignature} / {data.timeSignature}
+          {data.staves[0]?.measures[0]?.keySignature ?? '—'} / {data.staves[0]?.measures[0]?.timeSignature ?? '—'}
         </span>
       </div>
 

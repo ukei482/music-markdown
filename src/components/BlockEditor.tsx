@@ -11,13 +11,11 @@ type Props = {
 }
 
 const DEFAULT_SCORE: ScoreData = {
-  timeSignature: '4/4',
-  keySignature: 'C',
   staves: [
     {
       clef: 'treble',
       measures: [
-        { chord: 'C', degree: 'Ⅰ', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
+        { chord: 'C', degree: 'Ⅰ', timeSignature: '4/4', keySignature: 'C', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
       ],
     },
   ],
