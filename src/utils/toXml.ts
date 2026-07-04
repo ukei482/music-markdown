@@ -23,11 +23,13 @@ function measureToXml(m: Measure): string {
   const attrs = [
     m.timeSignature ? ` timeSignature="${m.timeSignature}"` : '',
     m.keySignature  ? ` keySignature="${m.keySignature}"`  : '',
-    ` chord="${m.chord}" degree="${m.degree}"`,
+    m.chord  ? ` chord="${m.chord}"`   : '',
+    m.degree ? ` degree="${m.degree}"` : '',
   ].join('')
-  const notes = m.notes.map(n =>
-    `          <note pitch="${n.pitch}" duration="${n.duration}"/>`,
-  ).join('\n')
+  const notes = m.notes.map(n => {
+    const pitchAttr = n.pitches.join(' ')
+    return `          <note pitches="${pitchAttr}" duration="${n.duration}"/>`
+  }).join('\n')
   return `        <measure${attrs}>\n${notes}\n        </measure>`
 }
 

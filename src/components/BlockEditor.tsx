@@ -11,19 +11,17 @@ type Props = {
 }
 
 const DEFAULT_SCORE: ScoreData = {
-  staves: [
-    {
-      clef: 'treble',
-      measures: [
-        { chord: 'C', degree: 'Ⅰ', timeSignature: '4/4', keySignature: 'C', notes: [{ pitch: 'C4', duration: 4 }, { pitch: 'E4', duration: 4 }, { pitch: 'G4', duration: 4 }, { pitch: 'E4', duration: 4 }] },
-      ],
-    },
-  ],
+  staves: [{
+    clef: 'treble',
+    measures: [
+      { timeSignature: '4/4', keySignature: 'C', notes: [] },
+    ],
+  }],
 }
 
 function createBlock(type: Block['type'], level?: 1 | 2 | 3): Block {
   const id = crypto.randomUUID()
-  if (type === 'text') return { id, type: 'text', content: '' }
+  if (type === 'text')    return { id, type: 'text', content: '' }
   if (type === 'heading') return { id, type: 'heading', level: level ?? 2, content: '' }
   return { id, type: 'score', data: structuredClone(DEFAULT_SCORE) }
 }
@@ -96,7 +94,10 @@ export default function BlockEditor({ blocks, onChange }: Props) {
               />
             )}
             {block.type === 'score' && (
-              <ScoreBlock data={block.data} onEdit={() => {}} />
+              <ScoreBlock
+                data={block.data}
+                onChange={newData => patchBlock(block.id, { data: newData })}
+              />
             )}
           </div>
           <InsertSlot onAdd={(t, l) => insertBlock(i, t, l)} />

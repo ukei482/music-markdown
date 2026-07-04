@@ -14,13 +14,13 @@ export type Staff = {
 
 export type Measure = {
   notes:          Note[]
-  chord:          string
-  degree:         string
-  timeSignature?: string   // 変化するときだけ設定 例: "4/4" → "3/4"
-  keySignature?:  string   // 変化するときだけ設定 例: "C" → "G"
+  chord?:         string
+  degree?:        string
+  timeSignature?: string
+  keySignature?:  string
 }
 
 export type Note = {
-  pitch:    string
+  pitches:  string[]  // 空配列 = 休符、複数 = 和音
   duration: number
 }
